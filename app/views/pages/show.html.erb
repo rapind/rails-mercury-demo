@@ -1,0 +1,11 @@
+<h1 id="page_title" data-mercury="simple"><%= @page.title %></h1>
+
+<p>
+  <%= @page.description %>
+</p>
+
+<p id="page_body" data-mercury="markdown"><%= @page.body %></p>
+
+<p>
+  <%= link_to 'Edit', "/editor#{request.path}" %>
+</p>

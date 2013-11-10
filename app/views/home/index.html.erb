@@ -1,0 +1,13 @@
+<h1>Home</h1>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <h2><%= user.email %></h2>
+      <ol>
+        <% user.pages.all.each do |page| %>
+          <li><%= link_to page.title, page %></li>
+        <% end %>
+      </ol>
+    </li>
+  <% end %>
+</ul>
