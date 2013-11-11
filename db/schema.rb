@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131109005640) do
+ActiveRecord::Schema.define(:version => 20131111135838) do
+
+  create_table "aloha_pages", :force => true do |t|
+    t.string   "title"
+    t.string   "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "mercury_images", :force => true do |t|
     t.string   "image_file_name"
@@ -22,8 +29,7 @@ ActiveRecord::Schema.define(:version => 20131109005640) do
     t.datetime "updated_at",         :null => false
   end
 
-  create_table "pages", :force => true do |t|
-    t.integer  "user_id"
+  create_table "mercury_pages", :force => true do |t|
     t.string   "title"
     t.string   "body"
     t.datetime "created_at", :null => false

@@ -1,0 +1,17 @@
+<h1>Mercury Pages</h1>
+<ul>
+  <% @mercury_pages.each do |mercury_page| %>
+    <li>
+      <%= link_to mercury_page.title, "/editor#{mercury_page_path(mercury_page)}" %> |
+      <%= link_to 'Delete', mercury_page, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= form_for MercuryPage.new do |f| %>
+  <%= f.hidden_field(:title, value: 'Title') %>
+  <%= f.hidden_field(:body, value: 'Body') %>
+  <%= f.submit "Create New Page", class: 'btn btn-primary' %>
+<% end %>

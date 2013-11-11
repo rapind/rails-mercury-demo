@@ -7,7 +7,11 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
+# WYSIWYG Editors
 gem 'mercury-rails'
+gem 'aloha-rails-improved', require: 'aloha/rails'
+
+# Image uploads
 gem 'carrierwave'
 
 # Gems used only for assets and not required

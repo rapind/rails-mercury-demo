@@ -1,5 +1,4 @@
-class Page < ActiveRecord::Base
-  belongs_to :user
+class MercuryPage < ActiveRecord::Base
   attr_accessible :title, :body
 
   def to_param
