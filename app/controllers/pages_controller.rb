@@ -18,24 +18,15 @@ class PagesController < ApplicationController
     end
   end
 
-  def new
-    @page = Page.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @page }
-    end
-  end
-
   def create
     @page = Page.new(params[:page])
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        format.html { redirect_to "/editor#{page_path(@page)}", notice: 'Page was successfully created.' }
         format.json { render json: @page, status: :created, location: @page }
       else
-        format.html { render action: "new" }
+        format.html { render action: "index" }
         format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
@@ -43,15 +34,10 @@ class PagesController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-
-    respond_to do |format|
-      if @page.update_attributes(params[:page])
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
-      end
+    if @page.update_attributes(title: params[:content][:page_title][:value], body: params[:content][:page_body][:value])
+      head :no_content
+    else
+      render json: @page.errors, status: :unprocessable_entity
     end
   end
 

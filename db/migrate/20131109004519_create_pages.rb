@@ -3,7 +3,6 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.belongs_to :user
       t.string :title
-      t.string :description
       t.string :body
 
       t.timestamps
