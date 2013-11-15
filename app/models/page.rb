@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  acts_as_list :position
   belongs_to :user
   attr_accessible :title, :description, :keywords, :body
 

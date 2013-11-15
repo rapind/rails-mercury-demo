@@ -1,0 +1,9 @@
+<%= simple_form_for(@page, :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.input :title, hint: "Title is used for both SEO and to display in the uer's browser bar." %>
+  <%= f.input :description, hint: "Description is a meta tag for your page and determines how it looks in search results." %>
+  <%= f.input :keywords, hint: "Keywords that are relevant to this page. I.e. \"Toronto, Leaside, Real Estate\"" %>
+  <%= f.input :body, as: :text, input_html: { class: "redactor" } %>
+  <br />
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', resource_path, class: 'btn btn-danger' %>
+<% end %>

@@ -11,6 +11,7 @@
  *= require_self
  *= require 'bootstrap.min'
  *= require 'redactor-rails'
+ *= require 'jquery-ui-1.10.3.custom'
  */
 
 [name*='[description]'], [name*='[keywords]'] {
@@ -21,3 +22,6 @@
   min-height: 200px;
 }
 
+#pages { list-style-type: none; margin: 0; padding: 0; width: 300px; }
+#pages li { margin: 5px; padding: 10px; height: 40px; cursor: pointer; }
+.ui-state-highlight { opacity: 0.3; }

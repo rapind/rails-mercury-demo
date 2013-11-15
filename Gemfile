@@ -27,3 +27,6 @@ end
 
 # WYSIWYG Editors
 gem 'redactor-rails'
+
+# page ordering
+gem 'acts_as_list'

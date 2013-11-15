@@ -5,6 +5,10 @@ RhubWysiwyg::Application.routes.draw do
   mount RedactorRails::Engine => '/redactor_rails'
 
   root to: 'pages#index'
-  resources :pages
+  resources :pages do
+    collection do
+      post 'sort'
+    end
+  end
 
 end

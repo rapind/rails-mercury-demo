@@ -3,6 +3,7 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.references :user
       t.integer :position
+      t.boolean :visible, default: true
       t.string :title, null: false
       t.string :page_type
       t.string :description
