@@ -10,4 +10,14 @@
  *
  *= require_self
  *= require 'bootstrap.min'
+ *= require 'redactor-rails'
  */
+
+[name*='[description]'], [name*='[keywords]'] {
+  width: 600px;
+}
+
+.redactor_editor {
+  min-height: 200px;
+}
+

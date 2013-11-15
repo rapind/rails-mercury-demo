@@ -1,13 +1,10 @@
 RhubWysiwyg::Application.routes.draw do
 
-  root to: 'mercury_pages#index'
+  devise_for :users
 
-  namespace :mercury do
-    resources :images
-  end
-  mount Mercury::Engine => '/'
+  mount RedactorRails::Engine => '/redactor_rails'
 
-  resources :mercury_pages, except: [:edit]
+  root to: 'pages#index'
+  resources :pages
 
-  resources :aloha_pages, except: [:edit]
 end

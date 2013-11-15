@@ -1,9 +1,0 @@
-<h1 id="page_title" data-mercury="simple"><%= @mercury_page.title.html_safe %></h1>
-<div id="page_body" data-mercury="full">
-  <%= @mercury_page.body.try(:html_safe) %>
-</div>
-
-<br />
-<p>
-  <%= link_to 'Back', mercury_pages_path, class: 'btn btn-info' %>
-</p>
