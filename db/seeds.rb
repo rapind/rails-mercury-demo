@@ -1,7 +1,7 @@
 User.create(email: "dave@rapin.com", password: "test")
 User.create(email: "denis.kateneff@clubsupport.ca", password: "test")
 
-Page.create(title: 'Home')
+Page.create(title: 'Home', page_type: 'landing')
 Page.create(title: 'About', body:
   <<-EOS
     <h1>About</h1>
