@@ -1,0 +1,10 @@
+<div>
+  <%= @page.body.try(:html_safe) %>
+</div>
+
+<br />
+<p>
+  <%= link_to 'Edit Page', edit_resource_path, class: 'btn btn-primary' %>
+  <%= link_to 'Delete Page', resource_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Back to Pages', collection_path, class: 'btn btn-warning' %>
+</p>
