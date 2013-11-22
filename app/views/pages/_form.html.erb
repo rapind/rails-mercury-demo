@@ -1,5 +1,6 @@
 <%= simple_form_for(@page, :html => {:class => 'form-horizontal' }) do |f| %>
   <%= f.input :title, hint: "Title is used for both SEO and to display in the uer's browser bar." %>
+  <%= f.input :page_type, collection: { :landing => 'Landing', :generic => 'Generic' }.sort.map {|k,v| [v,k]}, input_html: { class: "form-control" }, hint: "The type of page determines the layout to use." %>
   <%= f.input :description, hint: "Description is a meta tag for your page and determines how it looks in search results." %>
   <%= f.input :keywords, hint: "Keywords that are relevant to this page. I.e. \"Toronto, Leaside, Real Estate\"" %>
   <%= f.input :body, as: :text, input_html: { class: "redactor" } %>

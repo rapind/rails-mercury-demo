@@ -16,14 +16,15 @@ ActiveRecord::Schema.define(:version => 20131115152036) do
   create_table "pages", :force => true do |t|
     t.integer  "user_id"
     t.integer  "position"
-    t.string   "title",          :null => false
-    t.string   "page_type"
+    t.boolean  "visible",        :default => true
+    t.string   "title",                                 :null => false
+    t.string   "page_type",      :default => "generic", :null => false
     t.string   "description"
     t.string   "keywords"
     t.string   "body"
-    t.string   "custom_regions"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.text     "custom_regions"
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
 
   create_table "redactor_assets", :force => true do |t|

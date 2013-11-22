@@ -5,11 +5,11 @@ class CreatePages < ActiveRecord::Migration
       t.integer :position
       t.boolean :visible, default: true
       t.string :title, null: false
-      t.string :page_type
+      t.string :page_type, null: false, default: 'generic'
       t.string :description
       t.string :keywords
       t.string :body
-      t.string :custom_regions
+      t.text :custom_regions
 
       t.timestamps
     end

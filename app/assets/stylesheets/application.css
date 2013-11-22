@@ -18,6 +18,10 @@
   width: 600px;
 }
 
+[name*='[page_type]'] {
+  width: 200px !important;
+}
+
 .redactor_editor {
   min-height: 200px;
 }
