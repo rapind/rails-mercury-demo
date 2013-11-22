@@ -12,6 +12,18 @@ class PagesController < ApplicationController
     return
   end
 
+  def update
+    update! do |format|
+      format.html { redirect_to collection_path }
+    end
+  end
+
+  def create
+    create! do |format|
+      format.html { redirect_to collection_path }
+    end
+  end
+
   protected
     def collection
       @pages ||= end_of_association_chain.order(:position)
